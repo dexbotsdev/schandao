@@ -19,8 +19,7 @@ export default function DashBoardLayout({
     index > 0 ? <Anchor href={'/' + item} key={index}>
       <span style={{ textTransform: 'capitalize' }}>{item}</span>
     </Anchor> : <IconHome stroke={1} size={16}  key={index}/>
-  ));
-
+  )); 
   return (
     <>
     <HeaderMegaMenu />
