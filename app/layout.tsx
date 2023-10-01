@@ -2,14 +2,16 @@ import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Schan DAO',
+  description: 'Maximum Extractable Income!',
 };
 
 export default function RootLayout({ children }: { children: any }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <head>
         <ColorSchemeScript />
@@ -20,8 +22,10 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider  defaultColorScheme="dark"
+         theme={theme}>{children}</MantineProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
