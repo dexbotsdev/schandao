@@ -34,8 +34,7 @@ import {
   } from '@tabler/icons-react';
   import classes from './HeaderMegaMenu.module.css';
 import { SignOutButton, UserButton } from '@clerk/nextjs';
-  import {logo} from './logo.png';
-
+ 
   const mockdata = [
     {
       icon: IconEyeSearch,
