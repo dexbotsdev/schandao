@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
-  title: 'Schan DAO',
+  title: 'CAS MEV Tools',
   description: 'Maximum Extractable Income!',
 };
 
