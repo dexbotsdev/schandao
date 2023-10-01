@@ -16,6 +16,7 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    Affix,
   } from '@mantine/core';
   import { MantineLogo } from '@mantine/ds';
   import { useDisclosure } from '@mantine/hooks';
@@ -33,36 +34,43 @@ import {
   } from '@tabler/icons-react';
   import classes from './HeaderMegaMenu.module.css';
 import { SignOutButton, UserButton } from '@clerk/nextjs';
-  
+  import {logo} from './logo.png';
+
   const mockdata = [
     {
       icon: IconEyeSearch,
       title: 'Token Sniffer',
+      link: '/tokensniffer',
       description: 'Track In Realtime New Tokens with details',
     },
     {
       icon: IconCoin,
       title: 'Free for everyone',
+      link: '/tokensniffer',
       description: 'The fluid of Smeargle’s tail secretions changes',
     },
     {
       icon: IconBook,
       title: 'Documentation',
+      link: '/tokensniffer',
       description: 'Yanma is capable of seeing 360 degrees without',
     },
     {
       icon: IconFingerprint,
       title: 'Security',
+      link: '/tokensniffer',
       description: 'The shell’s rounded shape and the grooves on its.',
     },
     {
       icon: IconChartPie3,
       title: 'Analytics',
+      link: '/tokensniffer',
       description: 'This Pokémon uses its flying ability to quickly chase',
     },
     {
       icon: IconNotification,
       title: 'Notifications',
+      link: '/tokensniffer',
       description: 'Combusken battles with the intensely hot flames it spews',
     },
   ];
@@ -73,7 +81,7 @@ import { SignOutButton, UserButton } from '@clerk/nextjs';
     const theme = useMantineTheme();
   
     const links = mockdata.map((item) => (
-      <UnstyledButton className={classes.subLink} key={item.title}>
+      <UnstyledButton className={classes.subLink} key={item.title} component='a' href={item.link}>
         <Group wrap="nowrap" align="flex-start">
           <ThemeIcon size={34} variant="default" radius="md">
             <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
@@ -91,13 +99,13 @@ import { SignOutButton, UserButton } from '@clerk/nextjs';
     ));
   
     return (
-      <Box>
-        <header className={classes.header}>
+       <Box>
+        <header className={classes.header} >
           <Group justify="space-between" h="100%">
-            <MantineLogo size={30} />
+            <img src="/logo.png" height={30} />
   
             <Group h="100%" gap={0} visibleFrom="sm">
-              <a href="#" className={classes.link}>
+              <a href="/dashboard" className={classes.link}>
                 Home
               </a>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
@@ -206,5 +214,6 @@ import { SignOutButton, UserButton } from '@clerk/nextjs';
           </ScrollArea>
         </Drawer>
       </Box>
+      
     );
   }
